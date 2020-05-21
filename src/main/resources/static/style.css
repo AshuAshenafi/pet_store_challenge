@@ -49,3 +49,12 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
 }
+#home-button-home {
+    padding-left: 0;
+    text-align: left;
+}
+#pet-house-button {
+    padding-left: 0;
+    text-align: left;
+
+}
