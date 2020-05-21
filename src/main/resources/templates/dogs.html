@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>dog-list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    <div class="container-fluid nav-part">
+
+        <!--        <div class="log-home">-->
+        <div class="nav-item">
+            Oscar's Pet Store |
+        </div>
+
+        <a href="#" class="navbar-brand">
+            <i class="fas fa-home"></i>
+            HOME
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--        </div>-->
+
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="aboutBootcamp.html" class="nav-link"> Customer <span>|</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="algorithms.html" class="nav-link"> Cats <span>|</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="aboutJava.html" class="nav-link">Dogs <span>|</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="authors.html" class="nav-link">Wait2 <span>|</span></a>
+                </li>
+                <li>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-default my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container head-j">
+        <!--        <h1 class="display-4">Fluid jumbotron</h1>-->
+<!--        <div class="navbar-brand" style="color: white"><h3>ANSWER THESE AND TELL YOU WHAT!</h3></div>-->
+
+        <div style="color: white"><h2>LIST OF DOGS</h2></div>
+        <!--        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
+    </div>
+</div>
+
+<tr th:each="customer: ${dogOwners}">
+    <!--three columns-->
+    <div class="row">
+        <!--    first column-->
+        <div class="col-2 first-col">
+            <div class="left-div">
+
+            </div>
+        </div>
+        <!--    second column-->
+        <div class="col-6">
+            <div class="jumbotron col-md-12 justify-content-center" id="bottom-jumbo">
+
+                <!--            <form action="#" th:action="@{/addPet}" th:object="${pet}" method="post">-->
+
+                <div id="name-col" class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Customer Name: </label>
+                        </div>
+                        <div class="col-md-8">
+                            <td th:text="${customer.getCustomerName()}"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Customer Phone Number: </label>
+                        </div>
+                        <div class="col-md-8">
+                            <td th:text="${customer.getPhoneNumber()}"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Pet Type: </label>
+                        </div>
+                        <div class="col-md-8">
+                            <td th:text="${customer.getPetType()}"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Pet Name: </label>
+                        </div>
+                        <div class="col-md-8">
+                            <td th:text="${customer.pet.getPetName()}"/>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Breed Type: </label>
+                        </div>
+                        <div class="col-md-8">
+                            <td th:text="${customer.pet.getBreedType()}"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                ================================================
+            </div>
+        </div>
+    </div>
+</tr>
+<hr/>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

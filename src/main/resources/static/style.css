@@ -1,0 +1,38 @@
+.jumbotron-fluid {
+
+    /*background-image: url("beautiful-water.jpg");*/
+    background-size: cover;
+    min-height: 340px;
+}
+
+#bottom-jumbo {
+    margin-bottom: 0%;
+    padding-bottom: 5%;
+}
+
+.navbar {
+    background-color: maroon;
+    margin-bottom: 20%;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+.box {
+    width: 390px;
+}
+.reply-text {
+    font-size: larger;
+    font-weight: bolder;
+}
+.left-div {
+    border-top: 1px solid maroon;
+    border-right: 1px solid maroon;
+}
+/*creates sticky position*/
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
