@@ -19,7 +19,7 @@
             Oscar's Pet Store |
         </div>
 
-        <a href="#" class="navbar-brand">
+        <a href="customer.html" class="navbar-brand">
             <i class="fas fa-home"></i>
             HOME
         </a>
@@ -31,23 +31,18 @@
 
         <div class="collapse navbar-collapse" id="navLinks">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="aboutBootcamp.html" class="nav-link"> Customer <span>|</span></a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--&lt;!&ndash;                    <a href="customer.html" class="nav-link"> Customer <span>|</span></a>&ndash;&gt;-->
+<!--                </li>-->
 
-                <li class="nav-item">
-                    <a href="algorithms.html" class="nav-link"> Cats <span>|</span></a>
+                <li id="dog-button" class="nav-item">
+                    <form action="#" th:action="@{/dogs}" >
+                        <input class="pet-button" type="submit" value="DOGS" style="width:100%"/>
+                    </form>
                 </li>
-                <li class="nav-item">
-                    <a href="aboutJava.html" class="nav-link">Dogs <span>|</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="authors.html" class="nav-link">Wait2 <span>|</span></a>
-                </li>
-                <li>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-default my-2 my-sm-0" type="submit">Search</button>
+                <li id="cat-button" class="nav-item">
+                    <form action="#" th:action="@{/cats}" >
+                        <input class="pet-button"  type="submit" value="CATS" style="width:100%"/>
                     </form>
                 </li>
             </ul>
@@ -63,7 +58,7 @@
         <div class="navbar-brand" style="color: white"><h2>OSCAR'S PET STORE</h2></div>
 
         <div style="color: white"><h4>HELPING PETS</h4></div>
-        <!--        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
+
     </div>
 </div>
 <!--three columns-->
@@ -117,7 +112,7 @@
                                 <option name="pet" th:text="Male" th:value='male'>Male</option>
                                 <option name="pet" th:text="Female" th:value='female'>Female</option>
                             </select>
-                            <!--                            <input type="text" id="pettype-id" th:field="*{petType}" style="width: 100%"/>-->
+
                         </div>
                     </div>
                 </div>
@@ -140,13 +135,13 @@
                                 <option name="pet" th:text="Sphinx" th:value='Sphinx'></option>
 
                             </select>
-                            <!--                            <input type="text" id="pettype-id" th:field="*{petType}" style="width: 100%"/>-->
+
                         </div>
                     </div>
                 </div>
                 <hr/>
                 <!--///////////////////////////-->
-                <!--////////////-->
+
 
                 <div id="info-col" class="col-md-12">
                     <div class="row">
@@ -158,9 +153,6 @@
                         </div>
                     </div>
                 </div>
-                <!--                            if if if if statement -->
-                <!--/////////if starts here-->
-
 
                 <br/>
                 <div class="col-md-12 justify-content-center offset-4">
@@ -170,16 +162,13 @@
                 <!--        Rating-->
             </form>
             <!--            </span>-->
-
-
         </div>
     </div>
     <!--    third column-->
     <div class="col-4">
         <div class="sticky">
             <div class="box">
-                <img src="dog.jpg" alt="dog">
-                <!--                    <img src="knight.jpg" alt="three heads knight" style="width: 50px; height: 25rem">-->
+                <img src="cat.jpg" alt="dog">
             </div>
 
         </div>
