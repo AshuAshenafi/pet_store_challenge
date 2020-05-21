@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class HomeController {
 
     ArrayList<Customer> petowner1 = new ArrayList<>();
-    ArrayList<Customer> tempDogOwners = new ArrayList<>();
+//    ArrayList<Customer> tempDogOwners = new ArrayList<>();
 
     @Autowired
     CustomerService customService;
