@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class Pet {
+public class Pet2 {
     private String petName;
     private int age;
     private String gender;
@@ -8,7 +8,7 @@ public class Pet {
     private String breedType;
     private String petInfo;
 
-    public Pet() {
+    public Pet2() {
     }
 
     public String getPetName() {

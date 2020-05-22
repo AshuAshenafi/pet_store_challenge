@@ -17,15 +17,16 @@ public class HomeController {
     CustomerService customService;
 
     @GetMapping("/form")
-    public String loadFormPage(Model model){
+    public String loadFormPage(Model model) {
         model.addAttribute("customer", new Customer());
-                return "customer";
+        return "customer";
     }
+
     @PostMapping("/process")
-    public String processCustomerPage(Customer customer, Model model){
+    public String processCustomerPage(Customer customer, Model model) {
 //        System.out.println("print owner name = " + customer.getCustomerName());
 //        System.out.println("print pet type = " + customer.getPetType());
-        model.addAttribute("pet", new Pet());
+        model.addAttribute("pet", new Pet2());
 //        save customer infor temporarily
 
         Customer custtemp2 = new Customer();
@@ -36,35 +37,38 @@ public class HomeController {
 //        System.out.println("chekccc cutomer name form final contorlller plssss" + custtemp2.getCustomerName());
 //
 //        System.out.println("pet type at final check point = " + customer.getPetType());
-        if(customer.getPetType().equals("dog")){
+        if (customer.getPetType().equals("dog")) {
             return "dogform";
-        }
-        else{
+        } else {
             return "catform";
         }
 
     }
-    @PostMapping("/addPet")
-    public String loadCustomerAndPetPage(Pet pet, Model model){
-        Customer cust = new Customer();
-        for(int i = 0; i < 1; i++){
 
-        cust.setCustomerName(petowner1.get(0).getCustomerName());
-        cust.setPhoneNumber(petowner1.get(0).getPhoneNumber());
-        cust.setPetType(petowner1.get(0).getPetType());
+    @PostMapping("/addPet")
+    public String loadCustomerAndPetPage(Pet2 pet, Model model) {
+        Customer cust = new Customer();
+        for (int i = 0; i < 1; i++) {
+
+            cust.setCustomerName(petowner1.get(0).getCustomerName());
+            cust.setPhoneNumber(petowner1.get(0).getPhoneNumber());
+            cust.setPetType(petowner1.get(0).getPetType());
         }
 //         empty the temp arraylist
         petowner1.remove(0);
 
         cust.setPet(pet);
 
-        customService.addPetAndCustomer(cust);
+        if (!cust.getCustomerName().equals("")) {
+            customService.addPetAndCustomer(cust);
+        }
 
         model.addAttribute("customer", new Customer());
         return "customer";
     }
+
     @GetMapping("/dogs")
-    public String listDogs(Model model){
+    public String listDogs(Model model) {
 
 //        model.addAttribute("customer", new Customer());
         model.addAttribute("dogOwners", customService.listDogOwners());
@@ -72,24 +76,30 @@ public class HomeController {
     }
 
     @GetMapping("/cats")
-    public String listCats(Model model){
+    public String listCats(Model model) {
         model.addAttribute("catOwners", customService.listCatOwners());
         return "cats";
     }
 
 
     @PostMapping("/processDog")
-    public String processDogPage(Model model){
+    public String processDogPage(Model model) {
 //        model.addAttribute("customer", new Customer());
 
         return "dogform";
     }
+
     @PostMapping("/processCat")
-    public String processCatPage(Model model){
+    public String processCatPage(Model model) {
 //        model.addAttribute("customer", new Customer());
 
         return "catform";
     }
 
+    @GetMapping("/allpets")
+    public String showAllPet(Model model) {
+        model.addAttribute("allpets", customService.listAllOwners());
+        return "allpets";
+    }
 
 }

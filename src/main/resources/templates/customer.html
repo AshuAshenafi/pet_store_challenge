@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/69e5f61610.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,15 +16,23 @@
     <div class="container-fluid nav-part">
 
         <!--        <div class="log-home">-->
-        <a href="#" class="navbar-brand">
+        <div style="color: white">
+            <a href="#" class="navbar-brand">
             <i class="fas fa-paw"></i>
             <input id="pet-house-button" class="pet-button" type="submit" value="OSCAR'S" style="width:100%"/>
         </a>
+        </div>
 
-        <a href="#" class="navbar-brand">
-            <i class="fas fa-home"></i>
-            HOME
-        </a>
+        <form action="#" >
+            <div class="nav-item">
+                <a href="#" class="navbar-brand">
+                    <i class="fas fa-home"></i>
+
+                    <input id="home-button-home" class="pet-button-current" type="submit" value="HOME" style="width:100%"/>
+                </a>
+            </div>
+        </form>
+
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,13 +43,32 @@
             <ul class="navbar-nav">
 
                 <li id="dog-button" class="nav-item">
-                    <form action="#" th:action="@{/dogs}" >
-                        <input class="pet-button" type="submit" value="DOGS" style="width:100%"/>
+                    <form action="#" th:action="@{/dogs}">
+                        <div class="nav-item" style="color: white">
+                            <a href="#" class="navbar-brand">
+                                <input class="pet-button-white" type="submit" value="DOGS" style="width:100%"/>
+                            </a>
+                        </div>
                     </form>
                 </li>
-                <li id="cat-button" class="nav-item">
-                    <form action="#" th:action="@{/cats}" >
-                        <input class="pet-button"  type="submit" value="CATS" style="width:100%"/>
+
+                <li class="nav-item">
+                    <form action="#" th:action="@{/cats}" style="color: white">
+                        <div class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <input class="pet-button-white" type="submit" value="CATS" style="width:100%"/>
+                            </a>
+                        </div>
+                    </form>
+                </li>
+
+                <li class="nav-item">
+                    <form action="#" th:action="@{/allpets}" style="color: white">
+                        <div class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <input class="pet-button-white" type="submit" value="ALL-PETS" style="width:100%"/>
+                            </a>
+                        </div>
                     </form>
                 </li>
 
@@ -64,9 +92,13 @@
 <div class="row">
     <!--    first column-->
     <div class="col-2 first-col">
-        <div class="left-div">
+        <div class="left-div"></div>
+        <div class="left-div1"></div>
+        <div class="left-div2"></div>
+        <div class="left-div3"></div>
+        <div class="left-div4"></div>
+        <div class="left-div5"></div>
 
-        </div>
     </div>
     <!--    second column-->
     <div class="col-6">
@@ -124,7 +156,7 @@
 
                 <br/>
                 <div class="col-md-12 justify-content-center offset-4">
-                    <input type="submit" value="Add" style="width:30%"/>
+                    <input id="add-button" class="pet-button-white" type="submit" value="ADD" style="width:30%"/>
 
                 </div>
                 <!--        Rating-->

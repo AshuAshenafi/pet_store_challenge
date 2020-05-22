@@ -6,22 +6,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/69e5f61610.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
     <div class="container-fluid nav-part">
 
-        <!--        <div class="log-home">-->
-        <div class="nav-item">
-            Oscar's Pet Store |
-        </div>
+        <a href="#" class="navbar-brand" style="color: white">
+            <i class="fas fa-paw"></i>
+            <input id="pet-house-button" class="pet-button" type="submit" value="OSCAR'S" style="width:100%"/>
+        </a>
 
-        <form action="#" th:action="@{/form}">
+        <form action="#" th:action="@{/form}" style="color: white">
             <div class="nav-item">
                 <a href="#" class="navbar-brand">
                     <i class="fas fa-home"></i>
-                    <input id="home-button-home" class="pet-button" type="submit" value="HOME" style="width:100%"/>
+                    <input id="home-button-home" class="pet-button-white" type="submit" value="HOME" style="width:100%"/>
                 </a>
             </div>
         </form>
@@ -36,13 +37,32 @@
             <ul class="navbar-nav">
 
                 <li id="dog-button" class="nav-item">
-                    <form action="#" th:action="@{/dogs}" >
-                        <input class="pet-button" type="submit" value="DOGS" style="width:100%"/>
+                    <form action="#" >
+                        <div class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <input class="pet-button-current" type="submit" value="DOGS" style="width:100%"/>
+                            </a>
+                        </div>
                     </form>
                 </li>
+
                 <li id="cat-button" class="nav-item">
-                    <form action="#" th:action="@{/cats}" >
-                        <input class="pet-button"  type="submit" value="CATS" style="width:100%"/>
+                    <form action="#" th:action="@{/cats}" style="color: white">
+                        <div class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <input class="pet-button-white" type="submit" value="CATS" style="width:100%"/>
+                            </a>
+                        </div>
+                    </form>
+                </li>
+
+                <li class="nav-item">
+                    <form action="#" th:action="@{/allpets}" style="color: white">
+                        <div class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <input class="pet-button-white" type="submit" value="ALL-PETS" style="width:100%"/>
+                            </a>
+                        </div>
                     </form>
                 </li>
 
@@ -59,7 +79,7 @@
         <!--        <h1 class="display-4">Fluid jumbotron</h1>-->
         <div class="navbar-brand"><h2>OSCAR'S PET STORE</h2></div>
 
-        <div><h4>HELPING PETS</h4></div>
+        <div><h4>LIST OF DOGS</h4></div>
         <!--        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
     </div>
 </div>

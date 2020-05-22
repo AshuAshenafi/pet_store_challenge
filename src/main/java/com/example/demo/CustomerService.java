@@ -20,6 +20,7 @@ public class CustomerService {
 
 public ArrayList<Customer> listDogOwners(){
         for(int i = 0; i < owner.size(); i++){
+
             if(owner.get(i).getPetType().equals("dog")){
                 dogOwners.add(owner.get(i));
             }
@@ -34,6 +35,9 @@ public ArrayList<Customer> listDogOwners(){
             }
         }
         return catOwners;
+    }
+    public ArrayList<Customer> listAllOwners(){
+        return owner;
     }
 
 }
