@@ -26,11 +26,7 @@ img {
     font-size: larger;
     font-weight: bolder;
 }
-.left-div {
-    /*border-top: 1px solid maroon;*/
-    /*border-right: 4px solid maroon;*/
-    /*padding: 5%;*/
-}
+
 /*creates sticky position*/
 div.sticky {
     position: -webkit-sticky; /* Safari */
